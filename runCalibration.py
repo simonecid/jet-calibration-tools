@@ -883,15 +883,15 @@ def main(in_args=sys.argv[1:]):
         if args.redo_correction_fit:
             fit_params = redo_correction_fit(input_file, output_file, eta_min, eta_max, fitfunc)
         else:
-          try:
+        #   try:
             fit_params = make_correction_curves(input_file, output_file, args.treeName, ptBins, eta_min, eta_max,
                                                 fitfunc, do_genjet_plots, do_correction_fit,
                                                 args.PUmin, args.PUmax, args.burr)
-          except:
-            import pdb, traceback, sys
-            extype, value, tb = sys.exc_info()
-            traceback.print_exc()
-            pdb.post_mortem(tb)
+        #   except:
+        #     import pdb, traceback, sys
+        #     extype, value, tb = sys.exc_info()
+        #     traceback.print_exc()
+        #     pdb.post_mortem(tb)
         # Save successful fit params
         if fit_params != []:
             previous_fit_params = fit_params[:]
